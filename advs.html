@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Data Vault Systems - Enterprise SEC Data Solutions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: white;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .features {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            color: #2d3748;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .datasets {
+            padding: 80px 20px;
+        }
+
+        .dataset-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .dataset-item {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .dataset-item:hover {
+            transform: scale(1.05);
+        }
+
+        .dataset-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .dataset-item p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .stats {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .pricing {
+            padding: 80px 20px;
+            background: #f8f9fa;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            text-align: center;
+            border: 3px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .pricing-card.featured {
+            border-color: #667eea;
+            transform: scale(1.05);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .price span {
+            font-size: 1.2rem;
+            opacity: 0.7;
+        }
+
+        .features-list {
+            list-style: none;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .features-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .features-list li:before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Alpha Data Vault Systems</h1>
+        <p>Analyst-Ready SEC Data Pipelines</p>
+        <a href="#datasets" class="cta-button">Explore Datasets</a>
+    </div>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Enterprise-Grade Data Infrastructure</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Automated Pipeline</h3>
+                    <p>Real-time SEC EDGAR data extraction with zero manual intervention. Scheduled quarterly updates delivered directly to your storage.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Quality Metrics</h3>
+                    <p>Every dataset includes completeness scores, data freshness indicators, and comprehensive quality reports. Target: 95%+ completeness.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📖</div>
+                    <h3>Professional Documentation</h3>
+                    <p>Data dictionaries, README files, and methodology docs included. Know exactly what you're working with.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Deduplication & Sorting</h3>
+                    <p>Pre-processed data with duplicate removal and intelligent sorting. Newest filings first, ready for analysis.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Multiple Formats</h3>
+                    <p>CSV, Parquet, and JSON formats included. Sample datasets for quick evaluation before full analysis.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Google Drive Integration</h3>
+                    <p>Automated delivery to organized Google Drive folders. Year/Quarter structure for easy navigation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="datasets" id="datasets">
+        <div class="container">
+            <h2 class="section-title">8 Pre-Configured Analyst Datasets</h2>
+            <div class="dataset-list">
+                <div class="dataset-item">
+                    <h4>📈 Quarterly Reports (10-Q)</h4>
+                    <p>Earnings & quarterly performance metrics</p>
+                </div>
+                <div class="dataset-item">
+                    <h4>📊 Annual Reports (10-K)</h4>
+                    <p>Comprehensive annual financials</p>
+                </div>
+                <div class="dataset-item">
+                    <h4>💼 Insider Transactions (Form 4)</h4>
+                    <p>CEO/CFO trading signals</p>
+                </div>
+                <div class="dataset-item">
+                    <h4>⚡ Material Events (8-K)</h4>
+                    <p>M&A, executive changes, real-time alerts</p>
+                </div>
+                <div class="dataset-item">
+                    <h4>🚀 IPO Pipeline (S-1)</h4>
+                    <p>Companies going public</p>
+                </div>
+                <div class="dataset-item">
+                    <h4>🏦 Institutional Holdings (13F)</h4>
+                    <p>Smart money positions</p>
+                </div>
+                <div class="dataset-item">
+                    <h4>🎯 Activist Investors (SC 13D)</h4>
+                    <p>>5% stakeholder campaigns</p>
+                </div>
+                <div class="dataset-item">
+                    <h4>⚖️ Proxy Statements (DEF 14A)</h4>
+                    <p>Governance & compensation data</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>285K+</h3>
+                    <p>Records Per Quarter</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Data Quality Score</p>
+                </div>
+                <div class="stat-item">
+                    <h3>8</h3>
+                    <p>Dataset Types</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Automated Monitoring</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="container">
+            <h2 class="section-title">Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Starter</h3>
+                    <div class="price">$499<span>/month</span></div>
+                    <ul class="features-list">
+                        <li>2 Dataset Types</li>
+                        <li>Quarterly Updates</li>
+                        <li>Google Drive Delivery</li>
+                        <li>Quality Metrics</li>
+                        <li>Email Support</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Get Started</a>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>Professional</h3>
+                    <div class="price">$1,299<span>/month</span></div>
+                    <ul class="features-list">
+                        <li>All 8 Dataset Types</li>
+                        <li>Weekly Updates</li>
+                        <li>Google Drive + API Access</li>
+                        <li>Advanced Quality Reports</li>
+                        <li>Priority Support</li>
+                        <li>Custom Filters</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Most Popular</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <ul class="features-list">
+                        <li>Unlimited Datasets</li>
+                        <li>Real-Time Updates</li>
+                        <li>Private Cloud Deployment</li>
+                        <li>Custom Integrations</li>
+                        <li>24/7 Support</li>
+                        <li>SLA Guarantee</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Alpha Data Vault Systems. All rights reserved.</p>
+            <p style="margin-top: 20px;">
+                <a href="mailto:contact@alphadatavault.com">contact@alphadatavault.com</a> | 
+                <a href="#privacy">Privacy Policy</a> | 
+                <a href="#terms">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
